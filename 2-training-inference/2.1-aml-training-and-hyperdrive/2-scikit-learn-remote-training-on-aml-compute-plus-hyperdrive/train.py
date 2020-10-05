@@ -40,10 +40,10 @@ parser.add_argument('--penalty', type=str, default='l2',
 
 args, leftovers = parser.parse_known_args()
 # args = parser.parse_args()
-    
+
 print('The Scikit-Learn algorithm to use is {}.'.format(np.str(args.solver)))
 print('The penalty used is {}.'.format(np.str(args.penalty)))
-      
+
 print('Loading dataset')
 if(run.id.startswith("OfflineRun")):
     ws = Workspace.from_config()
@@ -81,7 +81,7 @@ categorical = []
 for col, value in attritionXData.iteritems():
     if value.dtype == 'object':
         categorical.append(col)
-        
+
 # Collect the numerical column names in separate list
 numerical = attritionXData.columns.difference(categorical)
 
